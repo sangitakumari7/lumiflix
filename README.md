@@ -62,6 +62,21 @@ This builds the app for production to the `build` folder. It correctly bundles R
 
 ---
 
+# Features 
+- Login/Sign Up
+   - Sign In/ Sign up form
+   - Redirct to Browser Page
+- Browse (After Authentication)
+   - Header
+   - Main Movies
+      - Trailer in Background
+      - Title & Descripion
+      - Movies Suggestions
+        - MoviesLists * N
+- NetflixGPT
+  -Serach Bar
+  -Movies Suggstion
+
 ## Learn More
 
 * To learn React, check out the React documentation.
