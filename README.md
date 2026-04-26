@@ -1,6 +1,15 @@
 # Lumniflix
 
-Welcome to **Lumniflix**! This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to **Lumniflix**! A modern, responsive web application for discovering movies and TV shows. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## 🚀 Live Demo
+
+> **[Insert Live Demo Link Here]**
+
+## 🛠 Tech Stack
+
+* **Frontend:** React.js
+* **API:** [TMDB (The Movie Database) API](https://developer.themoviedb.org/docs)
 
 ## Features
 
@@ -13,7 +22,10 @@ Welcome to **Lumniflix**! This project was bootstrapped with [Create React App](
 
 To run this project, you will need to add the following environment variables to your `.env` file at the root of your project:
 
-`REACT_APP_TMDB_API_KEY` - Your TMDB API key to fetch movie data (if applicable).
+```env
+REACT_APP_TMDB_API_KEY=your_api_key_here
+```
+*(You can get your free API key by creating an account on TMDB.)*
 
 ## Step-by-Step Setup Guide
 
@@ -54,3 +66,11 @@ This builds the app for production to the `build` folder. It correctly bundles R
 
 * To learn React, check out the React documentation.
 * To learn more about Create React App, check out the Create React App documentation.
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page if you want to contribute.
+
+## 📝 License
+
+This project is open-source and available under the MIT License.
