@@ -1,17 +1,21 @@
 export const checkValidData = (email, password, name) => {
   
-  if (name !== undefined && name.trim() === "") {
-    return "Full name is required";
+  // Email validation
+  if (!email || email.trim() === "") {
+    return "Email is required";
   }
 
-  const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  if (!isEmailValid) {
-    return "Please enter a valid email";
+  // Password validation
+  if (!password || password.trim() === "") {
+    return "Password is required";
   }
 
-  if (password.length < 6) {
-    return "Password must be at least 6 characters";
+  // Name validation (ONLY for Sign Up)
+  if (name !== null && name !== undefined) {
+    if (name.trim() === "") {
+      return "Name is required";
+    }
   }
 
-  return null; // ✅ no error
+  return null;
 };

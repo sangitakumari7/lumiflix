@@ -2,6 +2,8 @@ import React, { useState ,useRef } from 'react';
 import Header from './Header';
 import BgImg from '../img/bgimg.jpg';
 import { checkValidData } from '../utils/validate';
+import { createUserWithEmailAndPassword , signInWithEmailAndPassword} from "firebase/auth";
+import { auth } from '../utils/firebase';
 
 function Login() {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -20,6 +22,36 @@ function Login() {
       isSignInForm ? null : name.current.value // ✅ safe handling
     );
     setErrorMessage(message);
+    if(message) return;
+
+    if(!isSignInForm){
+      // Sign Up logic here
+      createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+      .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    console.log('User signed up:', user);
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    setErrorMessage(errorCode +"-"+ errorMessage);
+  });
+}
+    else{
+      // Sign In logic here
+      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+      .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      console.log('User signed in:', user);
+  })
+    .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    setErrorMessage(errorCode +"-"+ errorMessage);
+    });
+  }
     
   };
 
