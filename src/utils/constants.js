@@ -1,0 +1,1 @@
+export const GITHUB_URL = "https://avatars.githubusercontent.com/u/136090893?v=4";
