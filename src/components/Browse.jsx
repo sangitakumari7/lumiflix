@@ -1,7 +1,9 @@
-import React from 'react'
 import Header from './Header';
+import useNowPlayingMovies from '../hooks/useNowPlayingMovies';
 
 function Browse() {
+
+  useNowPlayingMovies();
   return (
     <div>
       <Header/>
@@ -9,4 +11,4 @@ function Browse() {
   )
 }
 
-export default Browse
+export default Browse;
