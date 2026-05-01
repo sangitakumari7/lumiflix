@@ -2,7 +2,7 @@ import { Play, Info } from "lucide-react";
 
 const VideoTitle = ({ title, overview }) => {
   return (
-    <div className="absolute pt-[15%] inset-0 flex items-center text-white  z-10">
+    <div className="absolute inset-0 flex items-center text-white  z-10">
       
       {/* Gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
