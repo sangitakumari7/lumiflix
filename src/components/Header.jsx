@@ -6,6 +6,9 @@ import { auth } from '../utils/firebase';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { addUser, removeUser } from '../utils/userSlice';
+import {toggleGptSearchView} from '../utils/gptSlice';
+import { SUPPORTED_LANGUAGES } from '../utils/constants';
+import { changeLanguage } from '../utils/configSlice';
 
 function Header() {
   const navigate = useNavigate();
@@ -42,6 +45,15 @@ function Header() {
     return () => unsubscribe();
   }, [dispatch, navigate]);
 
+  const handleGptsearch = () => {
+    dispatch(toggleGptSearchView())
+  };
+
+  const handleLanguageChange = (e) => {
+    dispatch(changeLanguage(e.target.value));
+  };
+
+
   return (
     <div className="absolute top-0 left-0 w-full h-24 px-10 flex items-center justify-between bg-gradient-to-b from-black/90 via-black/60 to-transparent z-50">
 
@@ -56,9 +68,19 @@ function Header() {
       {user && (
         <div className="flex items-center gap-6 text-white">
 
-          <span className="hidden md:block text-base cursor-pointer hover:text-gray-300">
-            Children
-          </span>
+          <select className="px-3 py-2 m-2 bg-gray-900 text-white border border-gray-600 rounded-md focus:outline-none focus:border-gray-400" onChange={ handleLanguageChange}>
+            {SUPPORTED_LANGUAGES.map((lang) => (
+              <option key={lang.identifier} value={lang.identifier}>
+                {lang.name}
+              </option>
+            ))}  
+          </select>
+
+          <button className="hidden md:inline-block px-4 py-2 text-sm font-medium text-white bg-purple-800 rounded-lg hover:bg-purple-700 hover:text-purple-200 transition-all duration-200 shadow-sm"
+            onClick={handleGptsearch}
+            >
+            GPT Search
+          </button>
 
           {/* Bell */}
           <svg 
