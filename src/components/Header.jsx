@@ -14,6 +14,8 @@ function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
+  const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
+
 
   const handleSignOut = async () => {
     try {
@@ -67,7 +69,7 @@ function Header() {
       {/* ✅ RIGHT SECTION ONLY AFTER LOGIN */}
       {user && (
         <div className="flex items-center gap-6 text-white">
-
+         {showGptSearch && (
           <select className="px-3 py-2 m-2 bg-gray-900 text-white border border-gray-600 rounded-md focus:outline-none focus:border-gray-400" onChange={ handleLanguageChange}>
             {SUPPORTED_LANGUAGES.map((lang) => (
               <option key={lang.identifier} value={lang.identifier}>
@@ -75,11 +77,13 @@ function Header() {
               </option>
             ))}  
           </select>
+          )}
+
 
           <button className="hidden md:inline-block px-4 py-2 text-sm font-medium text-white bg-purple-800 rounded-lg hover:bg-purple-700 hover:text-purple-200 transition-all duration-200 shadow-sm"
             onClick={handleGptsearch}
             >
-            GPT Search
+            {showGptSearch ? "Home Page" : "GPT Search"}
           </button>
 
           {/* Bell */}
