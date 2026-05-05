@@ -1,19 +1,19 @@
 const lang = {
     en:{
         search: "Search",
-        gptSearchPlaceholder: "What would you like to watch today?"
+        aiSearchBarPlaceHolder: "What would you like to watch today?"
     },
     hindi: {
         search: "खोज",
-        gptSearchPlaceholder: "आज आप क्या देखना चाहेंगे?"
+        aiSearchBarPlaceHolder: "आज आप क्या देखना चाहेंगे?"
     },
     spanish: {
         search: "Buscar",
-        gptSearchPlaceholder: "¿Qué te gustaría ver hoy?"
+        aiSearchBarPlaceHolder: "¿Qué te gustaría ver hoy?"
     },
     french: {
         search: "Rechercher",
-        gptSearchPlaceholder: "Qu'est-ce que vous aimeriez regarder aujourd'hui?"
+        aiSearchBarPlaceHolder: "Qu'est-ce que vous aimeriez regarder aujourd'hui?"
     }
 
 }
