@@ -16,3 +16,32 @@ export const SUPPORTED_LANGUAGES = [
   {identifier: "spanish" , name: "Spanish"},
   {identifier: "french" , name: "French"}
 ]
+
+export const OPTIONS_API_TMDB = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization: "Bearer " + import.meta.env.VITE_TMDB_API_READ_ACCESS_TOKEN,
+  },
+};
+
+export const ONGOING_MOVIES_URL =
+  "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1";
+
+export const POPULAR_MOVIES_URL =
+  "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1";
+
+export const TOP_RATED_MOVIES_URL =
+  "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1";
+
+export const UPCOMING_MOVIES_URL =
+  "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1";
+
+export const MOVIES_VIDEO_URL = "https://api.themoviedb.org/3/movie/";
+
+export const TDMA_CDN_IMG_URL = "https://image.tmdb.org/t/p/w500";
+
+export const MOVIE_SEARCH_DETAILS_TMDB_URL1 =
+  "https://api.themoviedb.org/3/search/movie?query=";
+export const MOVIE_SEARCH_DETAILS_TMDB_URL2 =
+  "&include_adult=false&language=en-US&page=1";
